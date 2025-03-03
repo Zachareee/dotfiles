@@ -25,8 +25,9 @@
           "powerline_symbol": "\ue0b0",
           "properties": {
             "folder_icon": " \uf07b ",
-            "home_icon": "\ue617",
-            "style": "folder"
+            "folder_separator_icon": "\uea9c ",
+            "home_icon": "\ue617 ",
+            "style": "agnoster_full"
           },
           "style": "powerline",
           "template": " \uf07b\uea9c {{ .Path }} ",
