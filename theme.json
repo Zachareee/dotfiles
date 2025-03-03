@@ -286,5 +286,15 @@
     }
   ],
   "patch_pwsh_bleed": true,
-  "version": 3
+  "version": 3,
+  "valid_line": {
+    "background": "transparent",
+    "foreground": "#ffffff",
+    "template": "\ue285\ueab6 "
+  },
+  "error_line": {
+    "background": "transparent",
+    "foreground": "#ffffff",
+    "template": "<#FF0000,transparent>\ue285</>\ueab6 "
+  }
 }
