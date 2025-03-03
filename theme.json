@@ -273,10 +273,11 @@
           "foreground": "#e0f8ff",
           "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
           "properties": {
-            "always_enabled": true
+            "always_enabled": true,
+            "status_template": "E {{ .Code }}"
           },
           "style": "plain",
-          "template": "Yap \ue285\ueab6 ",
+          "template": "{{ if eq .Code 0 }}Yap{{ else }}{{ .String }}{{ end }} \ue285\ueab6 ",
           "type": "status"
         }
       ],
