@@ -30,7 +30,7 @@
             "style": "agnoster_full"
           },
           "style": "powerline",
-          "template": " \uf07b\uea9c {{ .Path }} ",
+          "template": " \uf07b \uea9c {{ .Path }} ",
           "type": "path"
         },
         {
@@ -49,7 +49,7 @@
             "fetch_upstream_icon": true
           },
           "style": "powerline",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
           "type": "git"
         },
         {
@@ -75,15 +75,10 @@
           "background": "#303030",
           "foreground": "#3C873A",
           "leading_diamond": "\ue0b6",
-          "properties": {
-            "fetch_package_manager": true,
-            "npm_icon": " <#cc3a3a>\ue5fa</> ",
-            "yarn_icon": " <#348cba>\ue6a7</>"
-          },
           "style": "diamond",
-          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue7c0 {{ .Full }}{{ end }}",
           "trailing_diamond": "\ue0b4 ",
-          "type": "node"
+          "type": "deno"
         },
         {
           "background": "#306998",
