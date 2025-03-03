@@ -249,7 +249,7 @@
           "invert_powerline": true,
           "leading_diamond": "\ue0b2",
           "properties": {
-            "time_format": "_2,15:04"
+            "time_format": "2 Jan, 15:04"
           },
           "style": "diamond",
           "template": " \uf073 {{ .CurrentDate | date .Format }} ",
