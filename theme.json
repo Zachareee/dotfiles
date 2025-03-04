@@ -180,6 +180,15 @@
           "type": "ruby"
         },
         {
+          "type": "tauri",
+          "style": "diamond",
+          "foreground": "#000000",
+          "background": "#1976d2",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": " \ue8bb {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
           "background": "#ffffff",
           "foreground": "#5398c2",
           "leading_diamond": "\ue0b6",
@@ -205,6 +214,14 @@
           "template": "\uf308 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}",
           "trailing_diamond": "\ue0b4",
           "type": "kubectl"
+        },
+        {
+          "background": "#ffeb3b",
+          "foreground": "#193549",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "project"
         },
         {
           "background": "#b2bec3",
@@ -273,7 +290,7 @@
             "status_template": "E {{ .Code }}"
           },
           "style": "plain",
-          "template": "{{ if eq .Code 0 }}Yap{{ else }}{{ .String }}{{ end }} \ue285\ueab6 ",
+          "template": "{{ if eq .Code 0 }}Yap{{ else }}{{ .String }}{{ end }} <#ffffff>\ue285\ueab6</> ",
           "type": "status"
         }
       ],
