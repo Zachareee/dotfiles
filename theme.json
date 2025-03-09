@@ -227,9 +227,20 @@
           "type": "project"
         },
         {
+          "type": "text",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "trailing_diamond": "<transparent,background>\ue0b2</>",
+          "foreground": "#000000",
+          "background_templates": [
+            "{{if eq \"0\" .Env.ChocoOutdated}}#00ff31{{else}}#ff7373{{end}}"
+          ],
+          "template": "{{if eq \"0\" .Env.ChocoOutdated}}\uf164{{else}} {{ .Env.ChocoOutdated }} \uf062{{end}} "
+        },
+        {
           "background": "#b2bec3",
           "foreground": "#222222",
-          "leading_diamond": "\ue0b6",
+          "leading_diamond": "\ue0b2",
           "trailing_diamond": "<transparent,background>\ue0b2</>",
           "properties": {
             "linux": "\ue712",
@@ -287,7 +298,7 @@
         },
         {
           "foreground": "#e0f8ff",
-          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+          "foreground_templates": ["{{ if ne .Code 0 }}#ef5350{{ end }}"],
           "properties": {
             "always_enabled": true,
             "status_template": "E {{ .Code }}"
