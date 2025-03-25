@@ -17,3 +17,8 @@ if (!$packages) {
 }
 
 $env:ChocoOutdated = ($packages | Measure-Object -line).lines
+
+function Update-Choco {
+	start powershell -wait -verb runas "choco upgrade all -y; cd $env:USERPROFILE/OneDrive/Documents/WindowsPowerShell; ./MOTD.ps1"
+	$env:ChocoOutdated = (gc MOTD.txt | Measure-Object -line).lines
+}
