@@ -201,15 +201,6 @@
           "type": "azfunc"
         },
         {
-          "background": "#565656",
-          "foreground": "#faa029",
-          "leading_diamond": "\ue0b6",
-          "style": "diamond",
-          "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}",
-          "trailing_diamond": "\ue0b4 ",
-          "type": "aws"
-        },
-        {
           "background": "#316ce4",
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b6",
@@ -236,20 +227,6 @@
             "{{if eq \"0\" .Env.ChocoOutdated}}#00ff31{{else}}#ff7373{{end}}"
           ],
           "template": "{{if eq \"0\" .Env.ChocoOutdated}}\uf164{{else}} {{ .Env.ChocoOutdated }} \uf062{{end}} "
-        },
-        {
-          "background": "#b2bec3",
-          "foreground": "#222222",
-          "leading_diamond": "\ue0b2",
-          "trailing_diamond": "<transparent,background>\ue0b2</>",
-          "properties": {
-            "linux": "\ue712",
-            "macos": "\ue711",
-            "windows": "\ue70f"
-          },
-          "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "type": "os"
         },
         {
           "background": "#f36943",
@@ -309,6 +286,18 @@
         }
       ],
       "type": "prompt"
+    }
+  ],
+  "tooltips": [
+    {
+      "tips": ["aws"],
+      "background": "#565656",
+      "foreground": "#faa029",
+      "leading_diamond": "\ue0b6",
+      "style": "diamond",
+      "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}",
+      "trailing_diamond": "\ue0b4 ",
+      "type": "aws"
     }
   ],
   "patch_pwsh_bleed": true,
