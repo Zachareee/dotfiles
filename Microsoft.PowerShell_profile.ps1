@@ -1,5 +1,6 @@
 oh-my-posh init pwsh --config $env:userprofile/Documents/WindowsPowerShell/theme.json | iex
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+set-alias iel iex.bat
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion
@@ -9,7 +10,7 @@ $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
-$packages = @(gc $env:USERPROFILE/Documents/WindowsPowershell/MOTD.txt)
+$packages = @(Get-Content $env:USERPROFILE/Documents/WindowsPowershell/MOTD.txt)
 if (!$packages) {
 	write-host "No outdated packages" -fore green
 } else {

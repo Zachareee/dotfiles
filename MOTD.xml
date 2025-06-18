@@ -41,7 +41,7 @@
   <Actions Context="Author">
     <Exec>
       <Command>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Command>
-      <Arguments>-file "MOTD.ps1"</Arguments>
+      <Arguments>-NoProfile -file "MOTD.ps1"</Arguments>
       <WorkingDirectory>%ONEDRIVE%\Documents\WindowsPowerShell</WorkingDirectory>
     </Exec>
   </Actions>
