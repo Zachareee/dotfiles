@@ -1,0 +1,27 @@
+{
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"Sources": [
+		{
+			"Packages": [
+				{
+					"PackageIdentifier": "gsass1.NTop"
+				},
+				{
+					"PackageIdentifier": "LizardByte.Sunshine"
+				},
+				{
+					"PackageIdentifier": "MoonlightGameStreamingProject.Moonlight"
+				},
+				{
+					"PackageIdentifier": "Tailscale.Tailscale"
+				}
+			],
+			"SourceDetails": {
+				"Name": "winget",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Type": "Microsoft.PreIndexed.Package",
+				"Argument": "https://cdn.winget.microsoft.com/cache"
+			}
+		}
+	]
+}

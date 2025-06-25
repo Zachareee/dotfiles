@@ -1,0 +1,51 @@
+{
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"Sources": [
+		{
+			"Packages": [
+				{
+					"PackageIdentifier": "DenoLand.Deno"
+				},
+				{
+					"PackageIdentifier": "Git.Git"
+				},
+				{
+					"PackageIdentifier": "GoLang.Go"
+				},
+				{
+					"PackageIdentifier": "Google.DartSDK"
+				},
+				{
+					"PackageIdentifier": "DEVCOM.Lua"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
+				},
+				{
+					"PackageIdentifier": "Oracle.JDK.24"
+				},
+				{
+					"PackageIdentifier": "Python.Python.3.13"
+				},
+				{
+					"PackageIdentifier": "RubyInstallerTeam.RubyWithDevKit.3.4"
+				},
+				{
+					"PackageIdentifier": "Rustlang.Rust.MSVC"
+				},
+				{
+					"PackageIdentifier": "Rustlang.Rustup"
+				}
+			],
+			"SourceDetails": {
+				"Name": "winget",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Type": "Microsoft.PreIndexed.Package",
+				"Argument": "https://cdn.winget.microsoft.com/cache"
+			}
+		}
+	]
+}

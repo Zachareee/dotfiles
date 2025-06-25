@@ -1,0 +1,37 @@
+{
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"Sources": [
+		{
+			"Packages": [
+				{
+					"PackageIdentifier": "7zip.7zip"
+				},
+				{
+					"PackageIdentifier": "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier": "WinDirStat.WinDirStat"
+				}
+			],
+			"SourceDetails": {
+				"Name": "winget",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Type": "Microsoft.PreIndexed.Package",
+				"Argument": "https://cdn.winget.microsoft.com/cache"
+			}
+		},
+		{
+			"Packages": [
+				{
+					"PackageIdentifier": "9P7KNL5RWT25"
+				}
+			],
+			"SourceDetails": {
+				"Name": "msstore",
+				"Type": "Microsoft.Rest",
+				"Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier": "StoreEdgeFD"
+			}
+		}
+	]
+}
