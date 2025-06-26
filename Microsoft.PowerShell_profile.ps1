@@ -1,8 +1,9 @@
-oh-my-posh init pwsh --config $env:userprofile/Documents/WindowsPowerShell/omp/theme.json | iex
+$PROFILEDIR = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\'))
+oh-my-posh init pwsh --config "$PROFILEDIR\omp\theme.json" | iex
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 function run-eza {
-	param([string]$dir)
+	param([string]$dir = ".")
 	eza.exe -ahl --git --git-repos --no-quotes --group-directories-first --icons=always $dir
 }
 

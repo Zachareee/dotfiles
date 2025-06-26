@@ -13,6 +13,9 @@
 					"PackageIdentifier": "eza-community.eza"
 				},
 				{
+					"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
+				},
+				{
 					"PackageIdentifier": "JesseDuffield.lazygit"
 				},
 				{
@@ -22,7 +25,10 @@
 					"PackageIdentifier": "Neovim.Neovim"
 				},
 				{
-					"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
+					"PackageIdentifier": "OpenJS.NodeJS"
+				},
+				{
+					"PackageIdentifier": "Microsoft.Powershell"
 				}
 			],
 			"SourceDetails": {
