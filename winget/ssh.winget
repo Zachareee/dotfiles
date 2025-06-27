@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: "0.2.0"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: pwsh
+      directives:
+        description: Installs powershell 7
+        securityContext: elevated
+      settings:
+        id: Microsoft.Powershell
+        source: winget
+    - resource: ComputerManagementDsc/WindowsCapability
+      id: sshserver
+      directives:
+        description: Sets up the OpenSSH.Server capability on the system
+        securityContext: elevated
+      settings:
+        Name: OpenSSH.Server~~~~0.0.1.0
+        LogPath: C:\Temp\Logfile.log
+    - resource: xRegistry
+      directives:
+        description: Changes the default SSH prompt to Powershell 7
+        securityContext: elevated
+      dependsOn:
+        - pwsh
+        - sshserver
+      settings:
+        Key: HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH\DefaultShell
+        Value: C:\Program Files\PowerShell\7\pwsh.exe

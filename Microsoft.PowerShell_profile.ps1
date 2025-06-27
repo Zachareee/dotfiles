@@ -1,6 +1,7 @@
 $PROFILEDIR = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\'))
 oh-my-posh init pwsh --config "$PROFILEDIR\omp\theme.json" | iex
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+$env:EZA_CONFIG_DIR = "$PROFILEDIR/eza"
 
 function run-eza {
 	param([string]$dir = ".")
