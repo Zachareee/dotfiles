@@ -1,9 +1,27 @@
-write-host Checking for outdated packages
-$outdated = choco outdated
-$start = ($outdated | sls "Output is package name").LineNumber
-$end = ($outdated | sls "Chocolatey has determined").LineNumber
+Write-Host Checking for outdated packages
 
-if ($end - 3 -lt $start + 1) {Set-Content MOTD.txt ""} else {
-$outdated = $outdated | select -Index @(($start+1)..($end-3))
-Set-Content MOTD.txt $outdated
+$oldEncoding = [Console]::OutputEncoding
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
+
+# weird characters appear in $output if this is not set
+# see https://stackoverflow.com/a/74297741/7011902
+$output = winget update
+
+[Console]::OutputEncoding = $oldEncoding
+
+$start = ($output | Select-String "--------------").LineNumber
+$end = ($output | Select-String "upgrades available").LineNumber
+
+if ($end - 2 -lt $start)
+{
+	Set-Content MOTD.txt ""
+} else
+{
+	$truncated = $output | Select-Object -Index @(($start - 2)..($end - 2))
+	$id = ($output | Select-Object -Index ($start - 2)).IndexOf("Id")
+	$version = ($output | Select-Object -Index ($start - 2)).IndexOf("Version")
+	$source = ($output | Select-Object -Index ($start - 2)).IndexOf("Source")
+	$packagesArray = ($truncated -split "\n" | ForEach-Object { ($_.Substring(0, $id) + $_.Substring($version, $source - $version)).TrimEnd() })
+	Set-Content PREMOTD.txt ($packagesArray | Select-Object -First 2)
+	Set-Content MOTD.txt ($packagesArray | Select-Object -Skip 2)
 }
