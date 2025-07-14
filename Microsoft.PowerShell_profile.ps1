@@ -1,5 +1,5 @@
 # configuring profile vars
-$PROFILEDIR = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\'))
+$PROFILEDIR = $PSScriptRoot
 
 # shell enhancers
 oh-my-posh init pwsh --config "$PROFILEDIR\omp\theme.yaml" | Invoke-Expression
