@@ -1,7 +1,7 @@
 # configuraing profile vars
 $PROFILEDIR = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\'))
-oh-my-posh init pwsh --config "$PROFILEDIR\omp\theme.json" | iex
 # shell enhancers
+oh-my-posh init pwsh --config "$PROFILEDIR\omp\theme.yaml" | Invoke-Expression
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 # environment config
 $env:EZA_CONFIG_DIR = "$PROFILEDIR/eza"
