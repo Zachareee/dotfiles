@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: "0.2.0"
+  resources:
+    - resource: Microsoft.Windows.Settings/WindowsSettings
+      directives:
+        description: Enable Developer Mode
+        allowPrerelease: true
+        # Requires elevation for the set operation
+        securityContext: elevated
+      settings:
+        DeveloperMode: true
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vswhere
+      directives:
+        description: Installs vswhere.exe
+      settings:
+        id: Microsoft.VisualStudio.Locator
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vs
+      directives:
+        description: Installs visual studio
+      settings:
+        id: Microsoft.VisualStudio.2022.BuildTools
+        source: winget
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      directives:
+        description: Configures C++ workload
+        securityContext: elevated
+      dependsOn:
+        - vs
+        - vswhere
+      settings:
+        ProductId: Microsoft.VisualStudio.Product.BuildTools
+        ChannelId: VisualStudio.17.Release
+        Components:
+          - Microsoft.VisualStudio.Workload.VCTools
+        IncludeRecommended: true

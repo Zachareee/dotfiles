@@ -7,6 +7,9 @@
 					"PackageIdentifier": "DenoLand.Deno"
 				},
 				{
+					"PackageIdentifier": "Erlang.ErlangOTP"
+				},
+				{
 					"PackageIdentifier": "Git.Git"
 				},
 				{
@@ -17,12 +20,6 @@
 				},
 				{
 					"PackageIdentifier": "DEVCOM.Lua"
-				},
-				{
-					"PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
-				},
-				{
-					"PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
 				},
 				{
 					"PackageIdentifier": "Oracle.JDK.24"

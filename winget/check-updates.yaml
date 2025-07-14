@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: "0.2.0"
+  # parameters:
+  #   - resource: Environment
+  #     settings:
+  #       Name: Yes
+  resources:
+    - resource: Microsoft.DSC.Debug/Echo
+      settings:
+        output: "[envvar('PATH')]"
+    # - resource: ComputerManagementDsc/ScheduledTask
+    #   directives:
+    #     description: Checks for updates from winget
+    #     securityContext: elevated
+    #   settings:
+    #     TaskName: CheckUpdates
+    #     TaskPath: \User
+    #     Description: Checks for updates from winget
+    #     ActionExecutable: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+    #     ActionArguments: -noprofile -file "MOTD.ps1"
+    #     ActionWorkingPath: |
+    #       %USERPROFILE%\Documents\WindowsPowerShell
+    #     ScheduleType: AtLogon
+    #     Compatibility: V1
+    #     # needs environment variables or some way to pipe in parameters
+    #     User: envvar('COMPUTERNAME')\envvar('USERNAME')

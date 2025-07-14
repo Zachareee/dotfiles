@@ -4,7 +4,7 @@
 		{
 			"Packages": [
 				{
-					"PackageIdentifier": "OpenVPNTechnologies.OpenVPN"
+					"PackageIdentifier": "OpenVPNTechnologies.OpenVPNConnect"
 				},
 				{
 					"PackageIdentifier": "WiresharkFoundation.Wireshark"
