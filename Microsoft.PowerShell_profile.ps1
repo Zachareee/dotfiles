@@ -36,7 +36,7 @@ function Get-OutdatedPackages
 
 function Set-NumOutdated
 {
-	param([string]$cache = (Get-OutdatedPackages))
+	param([array]$cache = (Get-OutdatedPackages))
 	$env:OutdatedPackages = ($cache | Measure-Object -line).lines
 }
 
