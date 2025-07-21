@@ -13,16 +13,16 @@ Set-PSReadlineKeyHandler -Key Ctrl+p -Function PreviousHistory
 $env:EZA_CONFIG_DIR = "$PROFILEDIR/eza"
 
 # command aliases
-set-alias eza run-eza
+set-alias eza Start-EZA
 
 # helper functions
-function run-eza
+function Start-EZA
 {
 	param([string]$dir = ".")
 	eza.exe -ahl --git --git-repos --no-quotes --group-directories-first --icons=always $dir
 }
 
-function Setup-Cpp
+function Enable-Cpp
 {
 	. "$(vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath)\Common7\Tools\Launch-VsDevShell.ps1" 
 	# Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll";
@@ -40,7 +40,7 @@ function Set-NumOutdated
 	$env:OutdatedPackages = ($cache | Measure-Object -line).lines
 }
 
-function Upgrade-Winget
+function Update-Winget
 {
 	. "$PROFILEDIR/winget/install-all.bat"
 	. "$PROFILEDIR/MOTD.ps1"
