@@ -24,7 +24,9 @@ function Start-EZA
 
 function Enable-Cpp
 {
+	$cwd = Get-Location
 	. "$(vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath)\Common7\Tools\Launch-VsDevShell.ps1" 
+	Set-Location $cwd
 	# Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll";
 	# Enter-VsDevShell fc5b9e21
 }
@@ -76,18 +78,21 @@ function Edit-Config
 	Set-Location $cwd
 }
 
-$outdated_packages = Get-OutdatedPackages
-if (!$outdated_packages)
+if ($null -eq $env:OUTDATEDPACKAGES)
 {
-	Write-Host "No outdated packages" -fore green
-} else
-{
-	Write-Host "Outdated packages" -fore red
-	Get-Content $PROFILEDIR/PREMOTD.txt
-	Write-Output $outdated_packages
-}
+	$outdated_packages = Get-OutdatedPackages
+	if (!$outdated_packages)
+	{
+		Write-Host "No outdated packages" -fore green
+	} else
+	{
+		Write-Host "Outdated packages" -fore red
+		Get-Content $PROFILEDIR/PREMOTD.txt
+		Write-Output $outdated_packages
+	}
 
-Set-NumOutdated $outdated_packages
+	Set-NumOutdated $outdated_packages
+}
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
