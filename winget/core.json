@@ -13,6 +13,9 @@
 					"PackageIdentifier": "Microsoft.PowerToys"
 				},
 				{
+					"PackageIdentifier": "Mozilla.Thunderbird"
+				},
+				{
 					"PackageIdentifier": "mulaRahul.Keyviz"
 				},
 				{
