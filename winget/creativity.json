@@ -14,6 +14,12 @@
 				},
 				{
 					"PackageIdentifier": "GIMP.GIMP.3"
+				},
+				{
+					"PackageIdentifier": "Musescore.Musescore"
+				},
+				{
+					"PackageIdentifier": "OBSProject.OBSStudio"
 				}
 			],
 			"SourceDetails": {
