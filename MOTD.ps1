@@ -10,7 +10,14 @@ $output = winget update
 [Console]::OutputEncoding = $oldEncoding
 
 $start = ($output | Select-String "--------------")[0].LineNumber
-$end = ($output | Select-String "upgrades available")[0].LineNumber
+$upgradesAvailable = $output | Select-String "upgrades available"
+$end = if ($upgradesAvailable)
+{
+    $upgradesAvailable[0].LineNumber
+} else
+{
+    $start
+}
 
 if ($end - 2 -lt $start)
 {
