@@ -31,6 +31,12 @@ function Enable-Cpp
     # Enter-VsDevShell fc5b9e21
 }
 
+
+function Compress-Docker
+{
+    diskpart.exe /s $PROFILEDIR\compressdocker.txt
+}
+
 function Get-OutdatedPackages
 {
     @(Get-Content $PROFILEDIR/MOTD.txt)
