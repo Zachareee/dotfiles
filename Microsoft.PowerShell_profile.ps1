@@ -34,7 +34,15 @@ function Enable-Cpp
 
 function Compress-Docker
 {
-    diskpart.exe /s $PROFILEDIR\compressdocker.txt
+    
+    if (!(docker desktop status 2> $null))
+    {
+        diskpart.exe /s $PROFILEDIR\compressdocker.txt
+    } else
+    {
+        Write-Output "Docker must be stopped before compressing"
+        Write-Output "Use docker desktop stop"
+    }
 }
 
 function Get-OutdatedPackages
