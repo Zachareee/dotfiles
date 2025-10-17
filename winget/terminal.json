@@ -1,45 +1,48 @@
 {
-    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-    "Sources": [
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "Sources": [
+    {
+      "Packages": [
         {
-            "Packages": [
-                {
-                    "PackageIdentifier": "ajeetdsouza.zoxide"
-                },
-                {
-                    "PackageIdentifier": "BurntSushi.ripgrep.MSVC"
-                },
-                {
-                    "PackageIdentifier": "eza-community.eza"
-                },
-                {
-                    "PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
-                },
-                {
-                    "PackageIdentifier": "JesseDuffield.lazygit"
-                },
-                {
-                    "PackageIdentifier": "junegunn.fzf"
-                },
-                {
-                    "PackageIdentifier": "Neovim.Neovim"
-                },
-                {
-                    "PackageIdentifier": "OpenJS.NodeJS"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.Powershell"
-                },
-                {
-                    "PackageIdentifier": "waterlan.dos2unix"
-                }
-            ],
-            "SourceDetails": {
-                "Name": "winget",
-                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
-                "Type": "Microsoft.PreIndexed.Package",
-                "Argument": "https://cdn.winget.microsoft.com/cache"
-            }
+          "PackageIdentifier": "ajeetdsouza.zoxide"
+        },
+        {
+          "PackageIdentifier": "BurntSushi.ripgrep.MSVC"
+        },
+        {
+          "PackageIdentifier": "eza-community.eza"
+        },
+        {
+          "PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
+        },
+        {
+          "PackageIdentifier": "JesseDuffield.lazygit"
+        },
+        {
+          "PackageIdentifier": "jqlang.jq"
+        },
+        {
+          "PackageIdentifier": "junegunn.fzf"
+        },
+        {
+          "PackageIdentifier": "Neovim.Neovim"
+        },
+        {
+          "PackageIdentifier": "OpenJS.NodeJS"
+        },
+        {
+          "PackageIdentifier": "Microsoft.Powershell"
+        },
+        {
+          "PackageIdentifier": "waterlan.dos2unix"
         }
-    ]
+      ],
+      "SourceDetails": {
+        "Name": "winget",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Type": "Microsoft.PreIndexed.Package",
+        "Argument": "https://cdn.winget.microsoft.com/cache"
+      }
+    }
+  ]
 }

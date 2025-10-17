@@ -18,95 +18,38 @@ set-alias e Start-EZA
 # helper functions
 function Start-EZA
 {
-    param([string]$dir = ".")
-    eza.exe -ahl --git --git-repos --no-quotes --group-directories-first --icons=always $dir
-}
-
-function Enable-Cpp
-{
-    $cwd = Get-Location
-    . "$(vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath)\Common7\Tools\Launch-VsDevShell.ps1" 
-    Set-Location $cwd
-    # Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll";
-    # Enter-VsDevShell fc5b9e21
-}
-
-
-function Compress-Docker
-{
-    
-    if (!(docker desktop status 2> $null))
-    {
-        diskpart.exe /s $PROFILEDIR\compressdocker.txt
-    } else
-    {
-        Write-Output "Docker must be stopped before compressing"
-        Write-Output "Use docker desktop stop"
-    }
-}
-
-function Get-OutdatedPackages
-{
-    @(Get-Content $PROFILEDIR/MOTD.txt)
-}
-
-function Set-NumOutdated
-{
-    param([array]$cache = (Get-OutdatedPackages))
-    $env:OutdatedPackages = ($cache | Measure-Object -line).lines
-}
-
-function Update-Winget
-{
-    . "$PROFILEDIR/winget/install-all.bat"
-    . "$PROFILEDIR/MOTD.ps1"
-    Set-NumOutdated
-}
-
-enum ConfigApplication
-{
-    nvim
-    pwsh
-}
-
-function Edit-Config
-{
-    param(
-        [Parameter(Mandatory)]
-        [ConfigApplication]$app
-    )
-    $dir = switch($app)
-    {
-        nvim
-        {
-            "$env:LOCALAPPDATA/nvim" 
-        }
-        pwsh
-        {
-            $PROFILEDIR 
-        }
-    }
-    $cwd = Get-Location
-    Set-Location $dir
-    nvim
-    Set-Location $cwd
+  param([string]$dir = ".")
+  eza.exe -ahl --git --git-repos --no-quotes --group-directories-first --icons=always $dir
 }
 
 if ($null -eq $env:OUTDATEDPACKAGES)
 {
-    $outdated_packages = Get-OutdatedPackages
-    if (!$outdated_packages)
-    {
-        Write-Host "No outdated packages" -fore green
-    } else
-    {
-        Write-Host "Outdated packages" -fore red
-        Get-Content $PROFILEDIR/PREMOTD.txt
-        Write-Output $outdated_packages
-    }
+  $outdated_packages = Get-OutdatedPackages
+  if (!$outdated_packages)
+  {
+    Write-Host "No outdated packages" -fore green
+  } else
+  {
+    Write-Host "Outdated packages" -fore red
+    Get-Content $PROFILEDIR/PREMOTD.txt
+    Write-Output $outdated_packages
+  }
 
-    Set-NumOutdated $outdated_packages
+  Set-NumOutdated $outdated_packages
 }
+
+function Get-OutdatedPackages
+{
+  @(Get-Content $PROFILEDIR/MOTD.txt)
+}
+
+function Set-NumOutdated
+{
+  param([array]$cache = (Get-OutdatedPackages))
+  $env:OutdatedPackages = ($cache | Measure-Object -line).lines
+}
+
+. "$PROFILEDIR/Functions.ps1"
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.

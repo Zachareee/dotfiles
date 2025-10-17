@@ -13,22 +13,22 @@ $start = ($output | Select-String "--------------")[0].LineNumber
 $upgradesAvailable = $output | Select-String "upgrades available"
 $end = if ($upgradesAvailable)
 {
-    $upgradesAvailable[0].LineNumber
+  $upgradesAvailable[0].LineNumber
 } else
 {
-    $start
+  $start
 }
 
 if ($end - 2 -lt $start)
 {
-    Set-Content $PSScriptRoot/MOTD.txt ""
+  Set-Content $PSScriptRoot/MOTD.txt ""
 } else
 {
-    $truncated = $output | Select-Object -Index @(($start - 2)..($end - 2))
-    $id = ($output | Select-Object -Index ($start - 2)).IndexOf("Id")
-    $version = ($output | Select-Object -Index ($start - 2)).IndexOf("Version")
-    $source = ($output | Select-Object -Index ($start - 2)).IndexOf("Source")
-    $packagesArray = ($truncated -split "\n" | ForEach-Object { ($_.Substring(0, $id) + $_.Substring($version, $source - $version)).TrimEnd() })
-    Set-Content $PSScriptRoot/PREMOTD.txt ($packagesArray | Select-Object -First 2)
-    Set-Content $PSScriptRoot/MOTD.txt ($packagesArray | Select-Object -Skip 2)
+  $truncated = $output | Select-Object -Index @(($start - 2)..($end - 2))
+  $id = ($output | Select-Object -Index ($start - 2)).IndexOf("Id")
+  $version = ($output | Select-Object -Index ($start - 2)).IndexOf("Version")
+  $source = ($output | Select-Object -Index ($start - 2)).IndexOf("Source")
+  $packagesArray = ($truncated -split "\n" | ForEach-Object { ($_.Substring(0, $id) + $_.Substring($version, $source - $version)).TrimEnd() })
+  Set-Content $PSScriptRoot/PREMOTD.txt ($packagesArray | Select-Object -First 2)
+  Set-Content $PSScriptRoot/MOTD.txt ($packagesArray | Select-Object -Skip 2)
 }
