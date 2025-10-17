@@ -22,6 +22,17 @@ function Start-EZA
   eza.exe -ahl --git --git-repos --no-quotes --group-directories-first --icons=always $dir
 }
 
+function Get-OutdatedPackages
+{
+  @(Get-Content $PROFILEDIR/MOTD.txt)
+}
+
+function Set-NumOutdated
+{
+  param([array]$cache = (Get-OutdatedPackages))
+  $env:OutdatedPackages = ($cache | Measure-Object -line).lines
+}
+
 if ($null -eq $env:OUTDATEDPACKAGES)
 {
   $outdated_packages = Get-OutdatedPackages
@@ -36,17 +47,6 @@ if ($null -eq $env:OUTDATEDPACKAGES)
   }
 
   Set-NumOutdated $outdated_packages
-}
-
-function Get-OutdatedPackages
-{
-  @(Get-Content $PROFILEDIR/MOTD.txt)
-}
-
-function Set-NumOutdated
-{
-  param([array]$cache = (Get-OutdatedPackages))
-  $env:OutdatedPackages = ($cache | Measure-Object -line).lines
 }
 
 . "$PROFILEDIR/Functions.ps1"
