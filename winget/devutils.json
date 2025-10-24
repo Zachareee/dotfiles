@@ -7,6 +7,9 @@
           "PackageIdentifier": "DBeaver.DBeaver.Community"
         },
         {
+          "PackageIdentifier": "DevToys-app.DevToys"
+        },
+        {
           "PackageIdentifier": "Git.Git"
         },
         {
