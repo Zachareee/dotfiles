@@ -7,6 +7,9 @@
           "PackageIdentifier": "DenoLand.Deno"
         },
         {
+          "PackageIdentifier": "DynamoRIO.drmemory"
+        },
+        {
           "PackageIdentifier": "Erlang.ErlangOTP"
         },
         {
