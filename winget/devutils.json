@@ -13,13 +13,13 @@
           "PackageIdentifier": "Git.Git"
         },
         {
+          "PackageIdentifier": "Insomnia.Insomnia"
+        },
+        {
           "PackageIdentifier": "Oracle.MySQL"
         },
         {
           "PackageIdentifier": "PostgreSQL.PostgreSQL.17"
-        },
-        {
-          "PackageIdentifier": "Postman.Postman"
         },
         {
           "PackageIdentifier": "Responsively.ResponsivelyApp"

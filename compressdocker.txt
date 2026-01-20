@@ -1,2 +1,4 @@
 select vdisk file="$env:LOCALAPPDATA\Docker\wsl\disk\docker_data.vhdx"
 compact vdisk
+select vdisk file="$env:LOCALAPPDATA\Docker\wsl\main\ext4.vhdx"
+compact vdisk
