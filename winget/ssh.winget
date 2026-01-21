@@ -1,0 +1,17 @@
+properties:
+  configurationVersion: "0.2.0"
+  resources:
+    - resource: Microsoft.Windows.Developer/WindowsCapability
+      directives:
+        description: Install OpenSSH client
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        Name: OpenSSH.Client
+    - resource: Microsoft.Windows.Developer/WindowsCapability
+      directives:
+        description: Install OpenSSH server
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        Name: OpenSSH.Server
