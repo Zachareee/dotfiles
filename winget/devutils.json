@@ -23,6 +23,9 @@
         },
         {
           "PackageIdentifier": "Responsively.ResponsivelyApp"
+        },
+        {
+          "PackageIdentifier": "Task.Task"
         }
       ],
       "SourceDetails": {
