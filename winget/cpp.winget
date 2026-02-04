@@ -22,7 +22,7 @@ properties:
       directives:
         description: Installs visual studio
       settings:
-        id: Microsoft.VisualStudio.2022.BuildTools
+        id: Microsoft.VisualStudio.BuildTools
         source: winget
     - resource: Microsoft.VisualStudio.DSC/VSComponents
       directives:
