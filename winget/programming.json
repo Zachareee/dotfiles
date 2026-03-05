@@ -4,6 +4,9 @@
     {
       "Packages": [
         {
+          "PackageIdentifier": "astral-sh.uv"
+        },
+        {
           "PackageIdentifier": "DenoLand.Deno"
         },
         {
@@ -25,7 +28,7 @@
           "PackageIdentifier": "Oracle.JDK.24"
         },
         {
-          "PackageIdentifier": "Python.Python.3.13"
+          "PackageIdentifier": "Python.Python.3.14"
         },
         {
           "PackageIdentifier": "RubyInstallerTeam.RubyWithDevKit.3.4"

@@ -25,13 +25,16 @@
           "PackageIdentifier": "junegunn.fzf"
         },
         {
+          "PackageIdentifier": "marlocarlo.psmux"
+        },
+        {
+          "PackageIdentifier": "Microsoft.Powershell"
+        },
+        {
           "PackageIdentifier": "Neovim.Neovim"
         },
         {
           "PackageIdentifier": "OpenJS.NodeJS"
-        },
-        {
-          "PackageIdentifier": "Microsoft.Powershell"
         },
         {
           "PackageIdentifier": "waterlan.dos2unix"

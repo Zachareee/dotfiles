@@ -203,17 +203,17 @@ blocks:
         style: "diamond"
         trailing_diamond: "<transparent,background>\ue0b2</>"
         foreground: "#000000"
-        background_templates: 
-          - "{{if eq \"0\" .Env.OutdatedPackages}}#00ff31{{else}}#ff7373{{end}}"
+        background_templates:
+          - '{{if eq "0" .Env.OutdatedPackages}}#00ff31{{else}}#ff7373{{end}}'
         template: "{{if eq \"0\" .Env.OutdatedPackages}}\uf164{{else}} {{ .Env.OutdatedPackages }} \uf062{{end}} "
 
       - type: battery
         foreground: "#262626"
         background: "#f36943"
         background_templates:
-          - "{{if eq \"Charging\" .State.String}}#b8e994{{end}}"
-          - "{{if eq \"Discharging\" .State.String}}#fff34e{{end}}"
-          - "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
+          - '{{if eq "Charging" .State.String}}#b8e994{{end}}'
+          - '{{if eq "Discharging" .State.String}}#fff34e{{end}}'
+          - '{{if eq "Full" .State.String}}#33DD2D{{end}}'
         invert_powerline: true
         powerline_symbol: "\ue0b2"
         properties:
@@ -237,7 +237,7 @@ blocks:
   - alignment: left
     type: prompt
     newline: true
-    segments: 
+    segments:
       - type: text
         foreground: "#21c7c7"
         style: plain
@@ -249,7 +249,7 @@ blocks:
           - "{{ if ne .Code 0 }}#ef5350{{ end }}"
         properties:
           always_enabled: true
-          status_template: "0x{{ printf \"%x\" .Code }}"
+          status_template: '0x{{ printf "%x" .Code }}'
         style: plain
         template: "{{ if eq .Code 0 }}Yap{{ else }}{{ .String }}{{ end }} <#ffffff>\ue285\ueab6</> "
 
