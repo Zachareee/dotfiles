@@ -175,14 +175,6 @@ blocks:
         template: "\uf104<#f5bf45>\uf0e7</>\uf105 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
         trailing_diamond: "\ue0b4 "
 
-      - type: kubectl
-        background: "#316ce4"
-        foreground: "#ffffff"
-        leading_diamond: "\ue0b6"
-        style: diamond
-        template: "\uf308 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
-        trailing_diamond: "\ue0b4"
-
       - type: elixir
         style: diamond
         foreground: "#ffffff"
@@ -263,6 +255,15 @@ tooltips:
     style: diamond
     template: "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
     trailing_diamond: "\ue0b4 "
+  - type: kubectl
+    tips:
+      - kubectl
+    background: "#316ce4"
+    foreground: "#ffffff"
+    leading_diamond: "\ue0b6"
+    style: diamond
+    template: "\uf308 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
+    trailing_diamond: "\ue0b4"
 
 patch_pwsh_bleed: true
 
