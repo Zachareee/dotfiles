@@ -28,9 +28,6 @@
           "PackageIdentifier": "Oracle.JDK.24"
         },
         {
-          "PackageIdentifier": "Python.Python.3.14"
-        },
-        {
           "PackageIdentifier": "RubyInstallerTeam.RubyWithDevKit.3.4"
         },
         {

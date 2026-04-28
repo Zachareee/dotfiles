@@ -37,6 +37,9 @@
           "PackageIdentifier": "OpenJS.NodeJS"
         },
         {
+          "PackageIdentifier": "tree-sitter.tree-sitter-cli"
+        },
+        {
           "PackageIdentifier": "waterlan.dos2unix"
         }
       ],
