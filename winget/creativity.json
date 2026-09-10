@@ -10,6 +10,9 @@
                     "PackageIdentifier": "BlenderFoundation.Blender"
                 },
                 {
+                    "PackageIdentifier": "calibre.calibre"
+                },
+                {
                     "PackageIdentifier": "Buanzo.FFmpegforAudacity"
                 },
                 {
