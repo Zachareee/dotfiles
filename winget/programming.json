@@ -32,6 +32,9 @@
         },
         {
           "PackageIdentifier": "Rustlang.Rustup"
+        },
+        {
+          "PackageIdentifier": "Schniz.fnm"
         }
       ],
       "SourceDetails": {
