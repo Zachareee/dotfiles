@@ -49,6 +49,7 @@ if ($null -eq $env:OUTDATEDPACKAGES)
   Set-NumOutdated $outdated_packages
 }
 
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
 . "$PROFILEDIR/Functions.ps1"
 
 # Import the Chocolatey Profile that contains the necessary code to enable
