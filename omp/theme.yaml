@@ -22,7 +22,7 @@ blocks:
         foreground: "#2d3436"
         background: "#FF9248"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           folder_icon: " \uf07b "
           folder_separator_icon: "\uea9c "
           home_icon: "\ue617 "
@@ -39,17 +39,15 @@ blocks:
           - "{{ if gt .Ahead 0 }}#C792EA{{ end }}"
           - "{{ if gt .Behind 0 }}#C792EA{{ end }}"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           branch_icon: "\ue725 "
-          fetch_status: true
-          fetch_upstream_icon: true
         style: powerline
         template: " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} "
 
       - type: executiontime
         foreground: "#ffffff"
         background: "#83769c"
-        properties:
+        options:
           style: roundrock
           threshold: 0
         style: diamond
@@ -107,7 +105,7 @@ blocks:
         style: diamond
         template: "\ue7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
         trailing_diamond: "\ue0b4 "
-        properties:
+        options:
           folders:
             - src-tauri
 
@@ -208,7 +206,7 @@ blocks:
           - '{{if eq "Full" .State.String}}#33DD2D{{end}}'
         invert_powerline: true
         powerline_symbol: "\ue0b2"
-        properties:
+        options:
           charged_icon: "\uf240 "
           charging_icon: "\uf1e6 "
           discharging_icon: "\ue234 "
@@ -220,7 +218,7 @@ blocks:
         background: "#79b1ff"
         invert_powerline: true
         leading_diamond: "\ue0b2"
-        properties:
+        options:
           time_format: Mon 2 Jan, 3:04pm
         style: diamond
         template: " \uf073 {{ .CurrentDate | date .Format }} "
@@ -239,7 +237,7 @@ blocks:
         foreground: "#e0f8ff"
         foreground_templates:
           - "{{ if ne .Code 0 }}#ef5350{{ end }}"
-        properties:
+        options:
           always_enabled: true
           status_template: '0x{{ printf "%x" .Code }}'
         style: plain
