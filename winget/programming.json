@@ -10,7 +10,13 @@
           "PackageIdentifier": "DenoLand.Deno"
         },
         {
+          "PackageIdentifier": "DEVCOM.Lua"
+        },
+        {
           "PackageIdentifier": "DynamoRIO.drmemory"
+        },
+        {
+          "PackageIdentifier": "Elixir.Elixir"
         },
         {
           "PackageIdentifier": "Erlang.ErlangOTP"
@@ -22,10 +28,10 @@
           "PackageIdentifier": "Google.DartSDK"
         },
         {
-          "PackageIdentifier": "DEVCOM.Lua"
+          "PackageIdentifier": "Microsoft.DotNet.SDK.10"
         },
         {
-          "PackageIdentifier": "Oracle.JDK.24"
+          "PackageIdentifier": "Oracle.JDK.25"
         },
         {
           "PackageIdentifier": "RubyInstallerTeam.RubyWithDevKit.3.4"
